@@ -1,0 +1,297 @@
+{
+  "$comment": "Пример дерева тематик: поддержка сервиса быстрой доставки продуктов. Узел с children — раздел, без children — конечная тематика. Ветки разной длины: тематика на 2-м, 3-м или 4-м уровне (не глубже 4). У направления (1-й уровень) обязаны быть дети. Одинаковые названия тематик в разных разделах допустимы. id уникальны во всём файле и не меняются после старта теста: на них ссылаются эталоны сценариев и логи. Своё дерево положи в data/topics.json — он в .gitignore и берётся вместо этого файла.",
+  "nodes": [
+    {
+      "id": "d-order",
+      "name": "Заказ",
+      "children": [
+        {
+          "id": "c-order-checkout",
+          "name": "Оформление",
+          "children": [
+            {
+              "id": "t-checkout-min-sum",
+              "name": "Минимальная сумма заказа"
+            },
+            {
+              "id": "t-checkout-promo",
+              "name": "Не применяется промокод"
+            },
+            {
+              "id": "t-checkout-address",
+              "name": "Адрес вне зоны доставки"
+            }
+          ]
+        },
+        {
+          "id": "c-order-delivery",
+          "name": "Доставка",
+          "children": [
+            {
+              "id": "g-delivery-late",
+              "name": "Задержка",
+              "children": [
+                {
+                  "id": "t-delivery-late",
+                  "name": "Курьер опаздывает"
+                },
+                {
+                  "id": "t-delivery-not-arrived",
+                  "name": "Заказ не привезли"
+                }
+              ]
+            },
+            {
+              "id": "g-delivery-courier",
+              "name": "Курьер",
+              "children": [
+                {
+                  "id": "t-courier-cant-find",
+                  "name": "Курьер не может найти адрес"
+                },
+                {
+                  "id": "t-courier-complaint",
+                  "name": "Жалоба на курьера"
+                }
+              ]
+            },
+            {
+              "id": "t-delivery-time",
+              "name": "Сроки доставки"
+            }
+          ]
+        },
+        {
+          "id": "c-order-content",
+          "name": "Состав заказа",
+          "children": [
+            {
+              "id": "t-content-missing",
+              "name": "Не привезли товар"
+            },
+            {
+              "id": "t-content-wrong",
+              "name": "Привезли не тот товар"
+            },
+            {
+              "id": "t-content-weight",
+              "name": "Недовес весового товара"
+            }
+          ]
+        },
+        {
+          "id": "t-order-cancel",
+          "name": "Отмена заказа"
+        }
+      ]
+    },
+    {
+      "id": "d-quality",
+      "name": "Качество товаров",
+      "children": [
+        {
+          "id": "c-quality-damaged",
+          "name": "Повреждённый товар",
+          "children": [
+            {
+              "id": "t-damaged-package",
+              "name": "Повреждена упаковка"
+            },
+            {
+              "id": "t-damaged-broken",
+              "name": "Разбит или раздавлен"
+            }
+          ]
+        },
+        {
+          "id": "c-quality-spoiled",
+          "name": "Испорченный товар",
+          "children": [
+            {
+              "id": "t-spoiled-expired",
+              "name": "Истёк срок годности"
+            },
+            {
+              "id": "t-spoiled-taste",
+              "name": "Странный вкус или запах"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-payment",
+      "name": "Оплата",
+      "children": [
+        {
+          "id": "c-payment-charge",
+          "name": "Списания",
+          "children": [
+            {
+              "id": "t-charge-double",
+              "name": "Двойное списание"
+            },
+            {
+              "id": "t-charge-unknown",
+              "name": "Непонятное списание"
+            },
+            {
+              "id": "t-charge-failed",
+              "name": "Оплата не проходит"
+            }
+          ]
+        },
+        {
+          "id": "c-payment-refund",
+          "name": "Возврат денег",
+          "children": [
+            {
+              "id": "g-refund-status",
+              "name": "Статус возврата",
+              "children": [
+                {
+                  "id": "t-refund-late",
+                  "name": "Деньги не вернулись"
+                },
+                {
+                  "id": "t-refund-partial",
+                  "name": "Вернули не всю сумму"
+                }
+              ]
+            },
+            {
+              "id": "t-refund-how",
+              "name": "Как оформить возврат"
+            }
+          ]
+        },
+        {
+          "id": "t-payment-receipt",
+          "name": "Чек"
+        }
+      ]
+    },
+    {
+      "id": "d-promo",
+      "name": "Акции и промокоды",
+      "children": [
+        {
+          "id": "c-promo-codes",
+          "name": "Промокоды",
+          "children": [
+            {
+              "id": "t-promo-not-applied",
+              "name": "Не применяется промокод"
+            },
+            {
+              "id": "t-promo-expired",
+              "name": "Промокод истёк"
+            }
+          ]
+        },
+        {
+          "id": "c-promo-discounts",
+          "name": "Скидки",
+          "children": [
+            {
+              "id": "t-discount-price",
+              "name": "Цена отличается от акционной"
+            },
+            {
+              "id": "t-discount-terms",
+              "name": "Условия акции"
+            }
+          ]
+        },
+        {
+          "id": "c-promo-subscription",
+          "name": "Подписка на бесплатную доставку",
+          "children": [
+            {
+              "id": "t-subscription-cancel",
+              "name": "Отключить подписку"
+            },
+            {
+              "id": "t-subscription-charge",
+              "name": "Списание за подписку"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-catalog",
+      "name": "Ассортимент",
+      "children": [
+        {
+          "id": "t-catalog-out",
+          "name": "Товара нет в наличии"
+        },
+        {
+          "id": "t-catalog-info",
+          "name": "Состав и описание товара"
+        },
+        {
+          "id": "t-catalog-request",
+          "name": "Предложить новый товар"
+        }
+      ]
+    },
+    {
+      "id": "d-account",
+      "name": "Аккаунт",
+      "children": [
+        {
+          "id": "c-account-login",
+          "name": "Вход",
+          "children": [
+            {
+              "id": "t-login-code",
+              "name": "Не приходит код"
+            },
+            {
+              "id": "t-login-blocked",
+              "name": "Аккаунт заблокирован"
+            }
+          ]
+        },
+        {
+          "id": "c-account-data",
+          "name": "Личные данные",
+          "children": [
+            {
+              "id": "t-data-phone",
+              "name": "Смена телефона"
+            },
+            {
+              "id": "t-data-address",
+              "name": "Сохранённые адреса"
+            },
+            {
+              "id": "t-data-delete",
+              "name": "Удаление аккаунта"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-other",
+      "name": "Прочее",
+      "children": [
+        {
+          "id": "t-other-thanks",
+          "name": "Благодарность"
+        },
+        {
+          "id": "t-other-partner",
+          "name": "Сотрудничество"
+        },
+        {
+          "id": "t-other-offtopic",
+          "name": "Не по теме"
+        }
+      ]
+    }
+  ]
+}

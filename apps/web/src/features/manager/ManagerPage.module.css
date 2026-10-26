@@ -1,0 +1,262 @@
+.page {
+  min-height: 100%;
+  background: #f4f5f7;
+  padding: 0 0 40px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: var(--sidebar-bg);
+  color: #fff;
+}
+
+.top h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.me {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.me button {
+  border: 1px solid #5a6270;
+  background: transparent;
+  color: #fff;
+  border-radius: 3px;
+  padding: 4px 10px;
+}
+
+.card {
+  max-width: 960px;
+  margin: 20px auto 0;
+  padding: 20px 24px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 15px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-muted);
+}
+
+.form input {
+  width: 120px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
+.primary {
+  height: 32px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 600;
+}
+
+.primary:disabled {
+  opacity: 0.6;
+}
+
+.error {
+  color: var(--danger);
+}
+
+.fresh {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: #fff8e6;
+  border: 1px solid #f3d48a;
+  border-radius: 3px;
+}
+
+.fresh p {
+  margin: 0 0 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ——— Результаты ——— */
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.cardHead h2 {
+  margin: 0;
+}
+
+.secondary {
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: #fff;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-muted);
+}
+
+.filters select {
+  appearance: none;
+  height: 32px;
+  padding: 0 32px 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%238a8f98' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat right 10px center / 12px;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+.filters .checkbox {
+  flex-direction: row;
+  align-items: center;
+  height: 32px;
+}
+
+.summary {
+  margin: 0 0 10px;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.path {
+  font-size: 12px;
+}
+
+.match {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.miss {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.archived td {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ——— Траектория ——— */
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover td {
+  background: #f8f9fb;
+}
+
+.detail td {
+  background: #f8f9fb;
+  padding: 4px 10px 12px 24px;
+}
+
+.trajectory {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trajectory li {
+  display: flex;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.since {
+  flex: none;
+  width: 48px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.trajPath {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.headActions {
+  display: flex;
+  gap: 8px;
+}

@@ -1,0 +1,67 @@
+.page {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  background: var(--sidebar-bg);
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 340px;
+  background: var(--panel-bg);
+  border-radius: 6px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-muted);
+}
+
+.field input {
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text);
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+.error {
+  margin: 0;
+  color: var(--danger);
+}
+
+.submit {
+  height: 36px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 600;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--green-dark);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

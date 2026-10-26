@@ -1,0 +1,41 @@
+{
+  "name": "topic-stand",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Тестовый стенд: копия диалогового окна хелпдеска для проверки иерархии тематик",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev -w @stand/api\" \"npm run dev -w @stand/web\"",
+    "build": "npm run build -w @stand/web && npm run build -w @stand/api",
+    "start": "npm run start -w @stand/api",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "npm run db:generate -w @stand/api",
+    "db:migrate": "npm run db:migrate -w @stand/api",
+    "db:seed": "npm run db:seed -w @stand/api",
+    "data:check": "npm run data:check -w @stand/api",
+    "db:local": "pglite-server --db=data/pgdata --host=127.0.0.1 --port=5432 --max-connections=20"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.10",
+    "@electric-sql/pglite-socket": "^0.2.13",
+    "@eslint/js": "^10.0.1",
+    "concurrently": "^10.0.6",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.72.0"
+  }
+}

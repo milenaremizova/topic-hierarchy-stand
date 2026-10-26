@@ -1,0 +1,8 @@
+.tag {
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: var(--btn-neutral);
+  padding: 5px 10px;
+}

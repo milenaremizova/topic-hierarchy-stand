@@ -1,0 +1,16 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+.idea/
+*.log
+
+# Переменные окружения
+.env
+.env.*
+!.env.example
+
+# Данные под НДА — никогда не коммитим
+data/*
+!data/.gitkeep
+!data/*.example.json

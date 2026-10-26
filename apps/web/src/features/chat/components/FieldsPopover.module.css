@@ -1,0 +1,80 @@
+.popover {
+  position: absolute;
+  top: 44px;
+  left: 175px;
+  z-index: 10;
+  width: 276px;
+  max-height: 440px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #cfd2d6;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.12);
+}
+
+.field + .field {
+  border-top: 1px solid var(--border);
+}
+
+.label {
+  padding: 10px 14px;
+  background: #f4f4f5;
+  color: #555;
+}
+
+.star {
+  color: var(--danger);
+  margin-left: 3px;
+}
+
+.control {
+  padding: 8px 14px 12px;
+}
+
+.stub {
+  width: 100%;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--text-muted);
+}
+
+.hint {
+  margin: 6px 0 0;
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 14px 12px;
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+
+.apply,
+.cancel {
+  height: 35px;
+  padding: 0 16px;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.apply:hover,
+.cancel:hover {
+  filter: brightness(0.92);
+}
+
+.apply {
+  background: var(--green);
+}
+
+.cancel {
+  background: var(--danger);
+}

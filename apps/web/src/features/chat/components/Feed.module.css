@@ -1,0 +1,120 @@
+.feed {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 50px;
+  color: var(--text-muted);
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #c9cbcf;
+}
+
+.feed time {
+  font-size: 10px;
+  color: #555;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+
+/* Клиент — слева */
+.clientRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  max-width: 70%;
+}
+
+.clientAvatar {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #6fd3e8;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.clientBubbles {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.clientHeader,
+.clientText {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.clientHeader {
+  background: var(--bubble-client-header);
+  border-left: 3px solid #f0b43c;
+  font-weight: 600;
+}
+
+.clientText {
+  background: var(--bubble-client);
+}
+
+/* Оператор — справа */
+.operatorRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-left: auto;
+  max-width: 70%;
+}
+
+.operatorBubble {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--bubble-operator);
+}
+
+.operatorName {
+  grid-column: 1 / -1;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.operatorAvatar {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bubble-teal);
+}
+
+
+.system {
+  background: #f2f3f4;
+  padding: 10px 12px;
+  color: var(--system-text);
+}
+
+.system p {
+  margin: 4px 0;
+}

@@ -1,0 +1,47 @@
+# Локальная разработка: поднять только базу
+#   docker compose up -d db
+# Сервер целиком (база + стенд):
+#   docker compose up -d --build
+#
+# Если на сервере уже есть Postgres компании — сервис db не нужен:
+# укажи его адрес в DATABASE_URL и запускай только stand.
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      # Только с этой машины — снаружи база не видна
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  stand:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      DATA_DIR: ./data
+      # Внутри docker-сети база доступна по имени сервиса db, а не localhost
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '3000:3000'
+    volumes:
+      # topics.json и scenarios.json лежат на сервере в ./data
+      - ./data:/app/data
+
+volumes:
+  pgdata:

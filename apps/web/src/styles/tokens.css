@@ -1,0 +1,31 @@
+:root {
+  --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --text: #2b2f36;
+  --text-muted: #868e96;
+  --border: #e2e6ea;
+
+  --sidebar-bg: #1f2433;
+  --sidebar-icon: #9aa3b8;
+  --sidebar-accent: #ff6b6b;
+
+  --panel-bg: #fff;
+  --page-bg: #fff;
+  --header-bg: #f1f3f5;
+  --btn-neutral: #e9ecef;
+
+  --green: #2f9e6e;
+  --green-dark: #237a55;
+  --blue: #4c6ef5;
+  --blue-dark: #3b5bdb;
+  --accent-soft: #edf2ff;
+
+  --bubble-client: #f1f3f5;
+  --bubble-client-header: #dfe5fb;
+  --client-header-border: #748ffc;
+  --avatar-client: #a5b4fc;
+  --bubble-operator: #e6f4ec;
+  --avatar-operator: #2f9e6e;
+
+  --system-text: #9a9fa6;
+  --danger: #e03131;
+}

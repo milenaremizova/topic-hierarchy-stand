@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Иконка стенда: ветка дерева тематик, нижний пункт выбран -->
+  <rect width="32" height="32" rx="7" fill="#2e3440"/>
+  <path d="M9 11.5V23M9 16H13M9 23H13" fill="none" stroke="#9aa3b1" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="9" cy="9" r="2.6" fill="#20a4dc"/>
+  <rect x="14" y="7.5" width="11" height="3" rx="1.5" fill="#e3e5e8"/>
+  <rect x="15" y="14.5" width="10" height="3" rx="1.5" fill="#9aa3b1"/>
+  <rect x="15" y="21.5" width="10" height="3" rx="1.5" fill="#1fa64c"/>
+</svg>

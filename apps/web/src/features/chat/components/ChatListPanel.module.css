@@ -1,0 +1,103 @@
+.panel {
+  border-right: 1px solid var(--border);
+  background: var(--panel-bg);
+  overflow-y: auto;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  color: var(--text-muted);
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.toggle {
+  width: 48px;
+  height: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.split {
+  width: 160px;
+  height: 28px;
+  border: 0;
+  border-radius: 2px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 32px;
+  align-items: center;
+  padding: 0;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.split:disabled {
+  cursor: default;
+}
+
+.split > svg {
+  justify-self: center;
+}
+
+.green {
+  background: linear-gradient(to right, var(--green) calc(100% - 32px), var(--green-dark) 0);
+}
+
+.blue {
+  background: linear-gradient(to right, var(--blue) calc(100% - 32px), var(--blue-dark) 0);
+}
+
+.section {
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionHead {
+  height: 46px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.sectionHead > svg {
+  margin-left: auto;
+  color: var(--text-muted);
+}
+
+.count {
+  margin-left: auto;
+}
+
+.count + svg {
+  margin-left: 6px;
+}
+
+.chatItem {
+  padding: 10px 14px;
+  background: #eef7fd;
+  border-left: 3px solid var(--blue);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progress {
+  color: var(--text-muted);
+  font-size: 12px;
+}

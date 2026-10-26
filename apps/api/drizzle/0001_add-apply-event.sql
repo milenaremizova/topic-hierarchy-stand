@@ -1,0 +1,1 @@
+ALTER TYPE "public"."hierarchy_event_type" ADD VALUE 'apply' BEFORE 'clear';

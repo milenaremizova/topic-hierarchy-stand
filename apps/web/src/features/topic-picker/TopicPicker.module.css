@@ -1,0 +1,125 @@
+
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.search {
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
+.search:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+/* Рамка вокруг аккордеона или результатов */
+.box {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 4px 0;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--text);
+}
+
+.invalid {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 1px var(--danger);
+}
+
+.empty {
+  margin: 0;
+  padding: 10px;
+  color: var(--text-muted);
+}
+
+/* Аккордеон */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 30px;
+  padding-right: 10px;
+  border: 0;
+  background: none;
+  text-align: left;
+  color: var(--text);
+}
+
+.row:hover {
+  background: #f4f6f8;
+}
+
+.chevron {
+  flex: none;
+  transition: transform 0.15s;
+}
+
+.open {
+  font-weight: 600;
+}
+
+.open .chevron {
+  transform: rotate(90deg);
+}
+
+.dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
+  border: 1.5px solid #9aa0a8;
+  border-radius: 50%;
+}
+
+.selected {
+  background: #e8f5fc;
+}
+
+.selected .dot {
+  border-color: var(--blue-dark);
+  background: var(--blue-dark);
+}
+
+/* Результаты поиска */
+.result {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 6px 10px;
+}
+
+.resultPath {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.resultName {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.resultName .dot {
+  margin-top: 4px;
+}
+
+.mark {
+  background: none;
+  color: inherit;
+  font-weight: 700;
+}
